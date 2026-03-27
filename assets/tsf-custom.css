@@ -1120,3 +1120,72 @@ html.overflow-hidden {
     z-index: 999;
   }
 }
+
+/* ==========================================================================
+   PHASE 5: PREMIUM UPGRADES (GLASSMORPHISM, FONTS, WA)
+   ========================================================================== */
+
+/* 1. Typography Overrides */
+:root {
+  --font-heading-family: "Playfair Display", serif !important;
+  --font-body-family: "Inter", sans-serif !important;
+}
+h1, h2, h3, h4, h5, .title {
+  font-family: var(--font-heading-family) !important;
+}
+
+/* 2. Glassmorphism Sticky Header */
+.shopify-section-group-header-group {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+.shopify-section-group-header-group .header-wrapper,
+.shopify-section-group-header-group .header {
+  background: transparent !important;
+}
+
+/* 3. Button Micro-animations & Hovers */
+.button, .shopify-payment-button__button {
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.25s ease !important;
+}
+.button:not([disabled]):hover, 
+.shopify-payment-button__button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12) !important;
+}
+
+/* 4. WhatsApp Floating Button */
+.tsf-whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37,211,102,0.4);
+  z-index: 9999;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.tsf-whatsapp-float:hover {
+  transform: scale(1.08); /* slight bubble */
+  box-shadow: 0 6px 18px rgba(37,211,102,0.5);
+}
+@media screen and (max-width: 749px) {
+  .tsf-whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+  }
+  .tsf-whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+  }
+}
