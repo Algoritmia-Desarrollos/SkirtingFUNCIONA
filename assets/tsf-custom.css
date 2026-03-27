@@ -164,9 +164,32 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
    ----------------------------------------------- */
 
 .announcement-bar__message {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  letter-spacing: 0.06rem;
+  letter-spacing: 0.04rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Announcement bar — compact height, single line */
+.utility-bar {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  min-height: 0 !important;
+}
+
+.announcement-bar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.announcement-bar__message p,
+.announcement-bar__message .h5 {
+  margin: 0 !important;
+  padding: 2px 0 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.4 !important;
 }
 
 
@@ -768,9 +791,12 @@ slideshow-component .slideshow {
     padding-bottom: 2px !important;
   }
 
-  /* Reduce logo size on mobile */
+  /* Logo — allow natural size, no distortion */
   .header__heading-logo {
-    max-height: 2.4rem !important;
+    max-height: 3.8rem !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
 
   /* Tighten icon spacing */
