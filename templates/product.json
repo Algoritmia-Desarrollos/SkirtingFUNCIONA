@@ -54,38 +54,6 @@
             "padding_bottom": 0
           }
         },
-        "bulk_pricing_cta": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div style=\"padding: 1.5rem; border: 1px dashed rgba(var(--color-foreground),0.2); font-size: 1.4rem; border-radius: 5px; background: rgba(var(--color-foreground),0.02); margin-bottom: 2rem;\"><p style=\"margin:0;\"><strong>Buying 3+ sides?</strong> Call Manuel directly at (972) 750-2810 to discuss bulk volume pricing for your shop.</p></div>",
-            "padding_top": 0,
-            "padding_bottom": 0
-          }
-        },
-        "tab_about": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "About this cut",
-            "content": "<p>Our leather is selected from the thickest and strongest parts of the hide, heavily favored by saddlers making skirts and riggings for working saddles. You can expect durability and excellent structure.</p>",
-            "icon": "leather"
-          }
-        },
-        "tab_thickness": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Thickness guide",
-            "content": "<p><strong>13-15 oz:</strong> Extra heavy. Recommended for saddle skirts, riggings, and stress points.</p><p><strong>9-10 oz:</strong> Medium/Heavy. Recommended for heavy saddlebags, chaps tops, and tooled accessories.</p>",
-            "icon": "ruler"
-          }
-        },
-        "tab_care": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Conditioning & care",
-            "content": "<p>Our pit-tanned leather takes oil beautifully. We recommend 100% pure Neatsfoot oil or Saddle Soap for finishing and maintaining flexibility throughout the life of your craft.</p>",
-            "icon": "leaf"
-          }
-        },
         "trust_badges_custom": {
           "type": "custom_liquid",
           "settings": {
@@ -103,10 +71,6 @@
         "quantity_selector",
         "buy_buttons",
         "manuel_cta",
-        "bulk_pricing_cta",
-        "tab_about",
-        "tab_thickness",
-        "tab_care",
         "trust_badges_custom"
       ],
       "settings": {
@@ -123,6 +87,59 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "bulk_pricing_fullwidth": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"page-width\"><div style=\"padding: 1.5rem 2rem; border: 1px dashed rgba(var(--color-foreground),0.2); font-size: 1.4rem; border-radius: 5px; background: rgba(var(--color-foreground),0.02); text-align: center;\"><p style=\"margin:0;\"><strong>Buying 3+ sides?</strong> Call Manuel directly at (972) 750-2810 to discuss bulk volume pricing for your shop.</p></div></div>",
+        "padding_top": 24,
+        "padding_bottom": 0
+      }
+    },
+    "technical_specs": {
+      "type": "collapsible_content",
+      "blocks": {
+        "tab_about": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "About this cut",
+            "row_content": "<p>Our leather is selected from the thickest and strongest parts of the hide, heavily favored by saddlers making skirts and riggings for working saddles. You can expect durability and excellent structure.</p>",
+            "icon": "leather"
+          }
+        },
+        "tab_thickness": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Thickness guide",
+            "row_content": "<p><strong>13-15 oz:</strong> Extra heavy. Recommended for saddle skirts, riggings, and stress points.</p><p><strong>9-10 oz:</strong> Medium/Heavy. Recommended for heavy saddlebags, chaps tops, and tooled accessories.</p>",
+            "icon": "ruler"
+          }
+        },
+        "tab_care": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Conditioning & care",
+            "row_content": "<p>Our pit-tanned leather takes oil beautifully. We recommend 100% pure Neatsfoot oil or Saddle Soap for finishing and maintaining flexibility throughout the life of your craft.</p>",
+            "icon": "leaf"
+          }
+        }
+      },
+      "block_order": [
+        "tab_about",
+        "tab_thickness",
+        "tab_care"
+      ],
+      "settings": {
+        "heading": "Technical Specifications",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "section",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": true,
+        "padding_top": 24,
+        "padding_bottom": 36
       }
     },
     "product_description": {
@@ -172,7 +189,13 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
       "settings": {
         "heading": "Common questions about this leather",
         "color_scheme": "scheme-1",
@@ -202,6 +225,8 @@
   },
   "order": [
     "main",
+    "bulk_pricing_fullwidth",
+    "technical_specs",
     "product_description",
     "product_faq",
     "related-products"
