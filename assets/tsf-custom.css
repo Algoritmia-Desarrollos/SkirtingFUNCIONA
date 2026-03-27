@@ -1102,3 +1102,21 @@ shopify-payment-terms {
     font-size: 1.25rem !important;
   }
 }
+
+/* --- R. Mobile Menu & Navbar Fixes --- */
+
+/* 1. Prevent background scrolling when hamburger menu is open */
+body.overflow-hidden,
+html.overflow-hidden {
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+
+/* 2. Force header group to remain persistently sticky on mobile */
+@media screen and (max-width: 989px) {
+  .shopify-section-group-header-group {
+    position: sticky !important;
+    top: 0;
+    z-index: 999;
+  }
+}
