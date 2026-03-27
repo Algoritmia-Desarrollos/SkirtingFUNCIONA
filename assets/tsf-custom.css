@@ -1001,7 +1001,8 @@ shopify-payment-terms {
 /* --- F. Product grid: tighten column gap on mobile --- */
 @media screen and (max-width: 749px) {
   .grid.product-grid {
-    column-gap: 1.2rem !important;
+    --grid-mobile-horizontal-spacing: 1.2rem;
+    column-gap: var(--grid-mobile-horizontal-spacing) !important;
   }
   .product-card-wrapper {
     overflow: visible;
