@@ -843,10 +843,44 @@ slideshow-component .slideshow__controls:not(.tsf-dots-overlay) {
 
 
 /* -----------------------------------------------
-   20. PRODUCT PAGE — description collapsible style
+   20. PRODUCT PAGE — description below buy section
    ----------------------------------------------- */
 
-/* Make description visually distinct block */
+.tsf-product-description {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.tsf-product-desc-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.85);
+}
+
+.tsf-product-desc-inner h1,
+.tsf-product-desc-inner h2,
+.tsf-product-desc-inner h3 {
+  margin-top: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.tsf-product-desc-inner p {
+  margin-bottom: 1.4rem;
+}
+
+@media screen and (max-width: 749px) {
+  .tsf-product-description {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+  .tsf-product-desc-inner {
+    font-size: 1.4rem;
+  }
+}
+
+/* Legacy */
 .product__description {
   font-size: 1.45rem;
   border-left: 3px solid rgba(var(--color-foreground), 0.12);
