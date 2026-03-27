@@ -504,58 +504,77 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
    17. SLIDESHOW — Premium full-bleed treatment
    ----------------------------------------------- */
 
-/* Prevent ambient animation overflow from causing horizontal scroll */
-html, body {
-  overflow-x: hidden;
-}
+/* Prevent any overflow causing horizontal scroll */
+html, body { overflow-x: hidden; }
 
-/* Section: no padding so it bleeds fully */
+/* Section wrapper — no padding, clips overflow */
 .shopify-section:has(slideshow-component) {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   overflow: hidden;
 }
 
-/* Remove page-width constraint from slideshow */
+/*
+ * slideshow-component is the POSITIONING CONTEXT for the overlay dots.
+ * It has a fixed height — slides fill it, controls overlay it.
+ * Controls are placed OUTSIDE the scrollable .slideshow div so they
+ * don't scroll away with the slides.
+ */
 slideshow-component {
+  position: relative !important;
+  display: block !important;
+  height: 68vh !important;
+  min-height: 420px !important;
+  max-height: 780px !important;
+  overflow: hidden !important;
   max-width: 100% !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  display: block;
-  overflow: hidden;
 }
 
-/* Kill Dawn's default min-heights — they create white space below the image */
+@media screen and (max-width: 749px) {
+  slideshow-component {
+    height: 56vh !important;
+    min-height: 320px !important;
+    max-height: 600px !important;
+  }
+}
+
+/* The inner scrollable slider fills the full component height */
+slideshow-component .slideshow {
+  height: 100% !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Kill Dawn's min-heights — they create white space */
 .slideshow.banner--large,
 .slideshow.banner--medium,
 .slideshow.banner--small {
   min-height: 0 !important;
 }
 
-/* Slide itself = image height, not text box height */
+/* Each slide = full height of the component */
 .slideshow .slideshow__slide {
-  height: 68vh !important;
-  min-height: 420px !important;
-  max-height: 780px !important;
-}
-
-/* Remove text-box min-height so it doesn't push the slide open */
-.slideshow .banner__content,
-.slideshow .slideshow__text-wrapper {
-  min-height: 0 !important;
-  height: 100% !important;
-}
-
-/* Consistent slide height — cinematic 16:9 ish */
-.slideshow.banner--large .banner__media,
-.slideshow .slideshow__media.banner__media {
   height: 100% !important;
   min-height: 0 !important;
   max-height: none !important;
-  overflow: hidden;
 }
 
-/* All images cover + centered */
+/* Banner media fills the slide completely */
+.slideshow .slideshow__media.banner__media,
+.slideshow.banner--large .banner__media {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+}
+
+/* Images cover + centered */
 .slideshow .banner__media img {
   width: 100% !important;
   height: 100% !important;
@@ -563,108 +582,100 @@ slideshow-component {
   object-position: center center !important;
 }
 
-/* Bottom gradient vignette on every slide */
+/* Bottom gradient vignette */
 .slideshow .banner__media::after {
   content: '' !important;
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 45%,
-    rgba(0, 0, 0, 0.38) 100%
-  ) !important;
+  background: linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.38) 100%) !important;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Slideshow-component: positioning context for dots overlay */
-slideshow-component {
-  position: relative !important;
-  display: block;
+/* Text wrapper fills slide height — no min-height pushing */
+.slideshow .banner__content,
+.slideshow .slideshow__text-wrapper {
+  min-height: 0 !important;
+  height: 100% !important;
 }
 
-/* Slideshow inner container — position context for controls overlay */
-.slideshow {
-  position: relative !important;
-}
-
-/* Controls: overlay inside the image, at the bottom */
-slideshow-component .slideshow__controls {
+/*
+ * DOTS OVERLAY — positioned relative to slideshow-component (outside the scroll area)
+ * tsf-dots-overlay is our custom class so we don't conflict with Dawn's default controls
+ */
+slideshow-component .tsf-dots-overlay {
   position: absolute !important;
   bottom: 2rem !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  z-index: 20 !important;
-  width: auto !important;
+  z-index: 30 !important;
   top: auto !important;
+  width: auto !important;
   margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Hide prev/next arrows — keep only dots + pause */
-slideshow-component .slider-button--prev,
-slideshow-component .slider-button--next {
-  display: none !important;
-}
-
-/* Controls backdrop — pill container for visibility */
-slideshow-component .slideshow__controls {
+  /* Pill backdrop */
   background: rgba(0,0,0,0.32) !important;
   backdrop-filter: blur(6px) !important;
   border-radius: 999px !important;
   padding: 0.65rem 1.2rem !important;
+  border: none !important;
+  /* Always visible — no hover dependency */
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
-/* Navigation dots — sleek line style */
-slideshow-component .slider-counter--dots .slider-counter__link--dots .dot {
-  width: 24px;
-  height: 3px;
-  border-radius: 2px;
-  background: rgba(255,255,255,0.45);
-  display: block;
-  transition: background 0.3s ease, width 0.3s ease;
+/* Hide prev/next arrow buttons inside our overlay */
+slideshow-component .tsf-dots-overlay .slider-button--prev,
+slideshow-component .tsf-dots-overlay .slider-button--next {
+  display: none !important;
 }
 
-slideshow-component .slider-counter--dots .slider-counter__link--dots.slider-counter__link--active .dot {
-  background: rgba(255,255,255,1);
-  width: 40px;
-  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+/* Dot style — thin line bars */
+slideshow-component .tsf-dots-overlay .slider-counter__link--dots .dot {
+  width: 24px !important;
+  height: 3px !important;
+  border-radius: 2px !important;
+  background: rgba(255,255,255,0.45) !important;
+  border: none !important;
+  display: block !important;
+  transition: background 0.3s ease, width 0.3s ease !important;
 }
 
-/* Autoplay pause — bottom-right, overlaid */
-slideshow-component .slideshow__autoplay {
-  position: absolute !important;
-  bottom: 1.8rem !important;
-  right: 2rem !important;
-  left: auto !important;
-  transform: none !important;
-  z-index: 20;
-  width: 32px;
-  height: 32px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  transition: background 0.2s ease;
+slideshow-component .tsf-dots-overlay .slider-counter__link--dots.slider-counter__link--active .dot {
+  background: rgba(255,255,255,1) !important;
+  width: 40px !important;
+  box-shadow: 0 0 8px rgba(255,255,255,0.4) !important;
 }
 
-slideshow-component .slideshow__autoplay:hover {
-  background: rgba(255,255,255,0.25);
+/* Dot button padding (touch target) */
+slideshow-component .tsf-dots-overlay .slider-counter__link {
+  padding: 0.6rem 0.4rem !important;
 }
 
-slideshow-component .slideshow__autoplay svg {
-  width: 12px;
-  height: 12px;
-  fill: rgba(255,255,255,0.9);
-  stroke: none;
+/* Autoplay pause button — pill, bottom-right */
+slideshow-component .tsf-dots-overlay .slideshow__autoplay {
+  position: static !important;
+  width: 28px !important;
+  height: 28px !important;
+  background: rgba(255,255,255,0.15) !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 0.6rem !important;
 }
 
-/* Remove any gap below the slideshow images */
-slideshow-component .slideshow {
-  margin-bottom: 0 !important;
+slideshow-component .tsf-dots-overlay .slideshow__autoplay svg {
+  width: 10px !important;
+  height: 10px !important;
+  fill: rgba(255,255,255,0.9) !important;
+  stroke: none !important;
+}
+
+/* Hide the default (non-overlay) controls block */
+slideshow-component .slideshow__controls:not(.tsf-dots-overlay) {
+  display: none !important;
 }
 
 
