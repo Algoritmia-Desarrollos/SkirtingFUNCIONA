@@ -512,7 +512,7 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
 html, body { overflow-x: hidden; }
 
 /* Section wrapper — no padding, clips overflow */
-.shopify-section:has(slideshow-component) {
+.shopify-section:has(slideshow-component:not(.announcement-bar)) {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   overflow: hidden;
@@ -524,7 +524,7 @@ html, body { overflow-x: hidden; }
  * Controls are placed OUTSIDE the scrollable .slideshow div so they
  * don't scroll away with the slides.
  */
-slideshow-component {
+slideshow-component:not(.announcement-bar) {
   position: relative !important;
   display: block !important;
   height: 68vh !important;
@@ -537,7 +537,7 @@ slideshow-component {
 }
 
 @media screen and (max-width: 749px) {
-  slideshow-component {
+  slideshow-component:not(.announcement-bar) {
     height: 56vh !important;
     min-height: 320px !important;
     max-height: 600px !important;
@@ -548,7 +548,7 @@ slideshow-component {
  * The slider is absolutely positioned to fill slideshow-component exactly.
  * This avoids all height inheritance issues with flex-stretched parents.
  */
-slideshow-component > .slideshow {
+slideshow-component:not(.announcement-bar) > .slideshow {
   position: absolute !important;
   inset: 0 !important;
   width: 100% !important;
@@ -617,7 +617,7 @@ slideshow-component > .slideshow {
  * DOTS OVERLAY — positioned relative to slideshow-component (outside the scroll area)
  * tsf-dots-overlay is our custom class so we don't conflict with Dawn's default controls
  */
-slideshow-component .tsf-dots-overlay {
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay {
   position: absolute !important;
   bottom: 2rem !important;
   left: 50% !important;
@@ -639,13 +639,13 @@ slideshow-component .tsf-dots-overlay {
 }
 
 /* Hide prev/next arrow buttons inside our overlay */
-slideshow-component .tsf-dots-overlay .slider-button--prev,
-slideshow-component .tsf-dots-overlay .slider-button--next {
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay .slider-button--prev,
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay .slider-button--next {
   display: none !important;
 }
 
 /* Dot style — thin line bars */
-slideshow-component .tsf-dots-overlay .slider-counter__link--dots .dot {
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay .slider-counter__link--dots .dot {
   width: 24px !important;
   height: 3px !important;
   border-radius: 2px !important;
@@ -655,19 +655,19 @@ slideshow-component .tsf-dots-overlay .slider-counter__link--dots .dot {
   transition: background 0.3s ease, width 0.3s ease !important;
 }
 
-slideshow-component .tsf-dots-overlay .slider-counter__link--dots.slider-counter__link--active .dot {
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay .slider-counter__link--dots.slider-counter__link--active .dot {
   background: rgba(255,255,255,1) !important;
   width: 40px !important;
   box-shadow: 0 0 8px rgba(255,255,255,0.4) !important;
 }
 
 /* Dot button padding (touch target) */
-slideshow-component .tsf-dots-overlay .slider-counter__link {
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay .slider-counter__link {
   padding: 0.6rem 0.4rem !important;
 }
 
 /* Autoplay pause button — pill, bottom-right */
-slideshow-component .tsf-dots-overlay .slideshow__autoplay {
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay .slideshow__autoplay {
   position: static !important;
   width: 28px !important;
   height: 28px !important;
@@ -680,7 +680,7 @@ slideshow-component .tsf-dots-overlay .slideshow__autoplay {
   margin-left: 0.6rem !important;
 }
 
-slideshow-component .tsf-dots-overlay .slideshow__autoplay svg {
+slideshow-component:not(.announcement-bar) .tsf-dots-overlay .slideshow__autoplay svg {
   width: 10px !important;
   height: 10px !important;
   fill: rgba(255,255,255,0.9) !important;
@@ -688,7 +688,7 @@ slideshow-component .tsf-dots-overlay .slideshow__autoplay svg {
 }
 
 /* Hide the default (non-overlay) controls block */
-slideshow-component .slideshow__controls:not(.tsf-dots-overlay) {
+slideshow-component:not(.announcement-bar) .slideshow__controls:not(.tsf-dots-overlay) {
   display: none !important;
 }
 
