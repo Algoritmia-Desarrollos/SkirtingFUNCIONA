@@ -41,10 +41,6 @@
             "custom_liquid": "{% render 'trust-badges' %}"
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -60,7 +56,6 @@
         "quantity_selector",
         "buy_buttons",
         "trust_badges_custom",
-        "description",
         "share"
       ],
       "settings": {
@@ -77,6 +72,14 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "product_description": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"tsf-product-description page-width\">{% if product.description != blank %}<div class=\"tsf-product-desc-inner rte\">{{ product.description }}</div>{% endif %}</div>",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "product_faq": {
@@ -148,6 +151,7 @@
   },
   "order": [
     "main",
+    "product_description",
     "product_faq",
     "related-products"
   ]
