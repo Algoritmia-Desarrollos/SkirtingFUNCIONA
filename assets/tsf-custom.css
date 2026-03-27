@@ -532,7 +532,12 @@ slideshow-component {
   display: block;
 }
 
-/* Controls: overlay on top of images, at the bottom */
+/* Slideshow inner container — position context for controls overlay */
+.slideshow {
+  position: relative !important;
+}
+
+/* Controls: overlay inside the image, at the bottom */
 slideshow-component .slideshow__controls {
   position: absolute !important;
   bottom: 2rem !important;
@@ -741,6 +746,7 @@ slideshow-component .slideshow {
     max-height: 420px !important;
   }
 
+  .slideshow .slideshow__controls,
   slideshow-component .slideshow__controls {
     bottom: 1.2rem !important;
   }
