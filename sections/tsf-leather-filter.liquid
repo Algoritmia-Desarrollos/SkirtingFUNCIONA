@@ -216,19 +216,15 @@
       {%- assign default_col = collections[section.settings.collection] -%}
       {%- for product in default_col.products limit: section.settings.products_to_show -%}
         <div class="tsf-filter-card" data-group="__all">
-          <a href="{{ product.url }}" class="tsf-filter-card__image-wrap" aria-label="{{ product.title | escape }}">
-            {%- if product.featured_image -%}
-              <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.featured_image.alt | escape | default: product.title | escape }}" width="600" height="600" loading="lazy">
-            {%- else -%}
-              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- endif -%}
-            {%- if product.compare_at_price > product.price -%}<span class="tsf-filter-card__badge">Sale</span>{%- endif -%}
-          </a>
-          <p class="tsf-filter-card__title"><a href="{{ product.url }}">{{ product.title | escape }}</a></p>
-          <p class="tsf-filter-card__price">
-            {{ product.price | money }}{%- if product.compare_at_price > product.price -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
-          </p>
-          <a href="{{ product.url }}" class="button button--secondary button--full-width" style="margin-top: 1.2rem; min-height: 4.4rem; font-size: 1.35rem; padding: 0.8rem 1.5rem;">View Options</a>
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: 'square',
+            show_secondary_image: true,
+            show_vendor: false,
+            show_rating: true,
+            quick_add: 'standard',
+            section_id: section.id
+          %}
         </div>
       {%- endfor -%}
 
@@ -238,19 +234,15 @@
         {%- if filter_col != blank -%}
           {%- for product in filter_col.products limit: section.settings.products_to_show -%}
             <div class="tsf-filter-card is-hidden" data-group="{{ block.settings.collection_handle | escape }}">
-              <a href="{{ product.url }}" class="tsf-filter-card__image-wrap" aria-label="{{ product.title | escape }}">
-                {%- if product.featured_image -%}
-                  <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.featured_image.alt | escape | default: product.title | escape }}" width="600" height="600" loading="lazy">
-                {%- else -%}
-                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-                {%- endif -%}
-                {%- if product.compare_at_price > product.price -%}<span class="tsf-filter-card__badge">Sale</span>{%- endif -%}
-              </a>
-              <p class="tsf-filter-card__title"><a href="{{ product.url }}">{{ product.title | escape }}</a></p>
-              <p class="tsf-filter-card__price">
-                {{ product.price | money }}{%- if product.compare_at_price > product.price -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
-              </p>
-              <a href="{{ product.url }}" class="button button--secondary button--full-width" style="margin-top: 1.2rem; min-height: 4.4rem; font-size: 1.35rem; padding: 0.8rem 1.5rem;">View Options</a>
+              {% render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'square',
+                show_secondary_image: true,
+                show_vendor: false,
+                show_rating: true,
+                quick_add: 'standard',
+                section_id: section.id
+              %}
             </div>
           {%- endfor -%}
         {%- endif -%}
