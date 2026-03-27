@@ -35,7 +35,7 @@
         "button_hero_cta"
       ],
       "settings": {
-        "image_2": "shopify://shop_images/izq.jpg",
+        "image": "shopify://shop_images/izq.jpg",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "zoom-in",
@@ -43,9 +43,9 @@
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-4",
-        "stack_images_on_mobile": true,
+        "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
-        "show_text_below": true
+        "show_text_below": false
       }
     },
     "tsf_why_us": {

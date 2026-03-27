@@ -504,10 +504,16 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
    17. SLIDESHOW — Premium full-bleed treatment
    ----------------------------------------------- */
 
+/* Prevent ambient animation overflow from causing horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
 /* Section: no padding so it bleeds fully */
 .shopify-section:has(slideshow-component) {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  overflow: hidden;
 }
 
 /* Remove page-width constraint from slideshow */
@@ -516,6 +522,7 @@ slideshow-component {
   padding-left: 0 !important;
   padding-right: 0 !important;
   display: block;
+  overflow: hidden;
 }
 
 /* Kill Dawn's default min-heights — they create white space below the image */
