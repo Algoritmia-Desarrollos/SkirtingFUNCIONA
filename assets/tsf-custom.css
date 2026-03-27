@@ -540,11 +540,17 @@ slideshow-component {
   }
 }
 
-/* The inner scrollable slider fills the full component height */
-slideshow-component .slideshow {
+/*
+ * The slider is absolutely positioned to fill slideshow-component exactly.
+ * This avoids all height inheritance issues with flex-stretched parents.
+ */
+slideshow-component > .slideshow {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
   height: 100% !important;
+  margin: 0 !important;
   min-height: 0 !important;
-  margin-bottom: 0 !important;
 }
 
 /* Kill Dawn's min-heights — they create white space */
@@ -554,8 +560,13 @@ slideshow-component .slideshow {
   min-height: 0 !important;
 }
 
-/* Each slide = full height of the component */
+/*
+ * Each slide = full height of the slider.
+ * flex: 0 0 100% ensures each slide takes exactly 100% of the scroll container width.
+ */
 .slideshow .slideshow__slide {
+  flex: 0 0 100% !important;
+  min-width: 100% !important;
   height: 100% !important;
   min-height: 0 !important;
   max-height: none !important;
@@ -563,10 +574,9 @@ slideshow-component .slideshow {
 
 /* Banner media fills the slide completely */
 .slideshow .slideshow__media.banner__media,
-.slideshow.banner--large .banner__media {
+.slideshow .banner__media {
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   min-height: 0 !important;
@@ -592,7 +602,7 @@ slideshow-component .slideshow {
   z-index: 1;
 }
 
-/* Text wrapper fills slide height — no min-height pushing */
+/* Text wrapper fills slide — no min-height pushing */
 .slideshow .banner__content,
 .slideshow .slideshow__text-wrapper {
   min-height: 0 !important;
