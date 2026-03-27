@@ -518,12 +518,33 @@ slideshow-component {
   display: block;
 }
 
-/* Consistent slide height — cinematic 16:9 ish */
-.slideshow.banner--large .banner__media,
-.slideshow .slideshow__media.banner__media {
+/* Kill Dawn's default min-heights — they create white space below the image */
+.slideshow.banner--large,
+.slideshow.banner--medium,
+.slideshow.banner--small {
+  min-height: 0 !important;
+}
+
+/* Slide itself = image height, not text box height */
+.slideshow .slideshow__slide {
   height: 68vh !important;
   min-height: 420px !important;
   max-height: 780px !important;
+}
+
+/* Remove text-box min-height so it doesn't push the slide open */
+.slideshow .banner__content,
+.slideshow .slideshow__text-wrapper {
+  min-height: 0 !important;
+  height: 100% !important;
+}
+
+/* Consistent slide height — cinematic 16:9 ish */
+.slideshow.banner--large .banner__media,
+.slideshow .slideshow__media.banner__media {
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
   overflow: hidden;
 }
 
