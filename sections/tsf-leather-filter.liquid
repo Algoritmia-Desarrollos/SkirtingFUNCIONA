@@ -228,6 +228,7 @@
           <p class="tsf-filter-card__price">
             {{ product.price | money }}{%- if product.compare_at_price > product.price -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
           </p>
+          <a href="{{ product.url }}" class="button button--secondary button--full-width" style="margin-top: 1.2rem; min-height: 4.4rem; font-size: 1.35rem; padding: 0.8rem 1.5rem;">View Options</a>
         </div>
       {%- endfor -%}
 
@@ -249,6 +250,7 @@
               <p class="tsf-filter-card__price">
                 {{ product.price | money }}{%- if product.compare_at_price > product.price -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
               </p>
+              <a href="{{ product.url }}" class="button button--secondary button--full-width" style="margin-top: 1.2rem; min-height: 4.4rem; font-size: 1.35rem; padding: 0.8rem 1.5rem;">View Options</a>
             </div>
           {%- endfor -%}
         {%- endif -%}
@@ -257,7 +259,7 @@
     </div>
 
     <div class="tsf-leather-filter__footer">
-      <a href="#" class="tsf-filter-view-all" id="tsf-filter-viewall-{{ section.id }}">
+      <a href="/collections/all" class="tsf-filter-view-all" id="tsf-filter-viewall-{{ section.id }}">
         {{ section.settings.view_all_label | escape }}
       </a>
     </div>

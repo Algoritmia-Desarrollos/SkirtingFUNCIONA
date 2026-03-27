@@ -95,8 +95,8 @@
     "tsf_stat_bar": {
       "type": "tsf-stat-bar",
       "settings": {
-        "stat_1_number": "500+",
-        "stat_1_label": "Orders shipped",
+        "stat_1_number": "5,000+",
+        "stat_1_label": "Hides shipped",
         "stat_2_number": "20+",
         "stat_2_label": "Years of tanning tradition",
         "stat_3_number": "Same day",
@@ -127,7 +127,7 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
@@ -160,7 +160,7 @@
           "type": "testimonial",
           "settings": {
             "photo_asset": "testimonial_bags.jpeg",
-            "quote": "Got 4 sides for a ranch saddle build. All came graded just like the site said, no suprises. Ordered on a Tuesday mornin and they where here Thursday — cant ask for much more than that.",
+            "quote": "Got 4 sides for a ranch saddle build. All came graded just like the site said, no surprises. Ordered on a Tuesday mornin and they were here Thursday — can't ask for much more than that.",
             "author": "Dave T.",
             "role_location": "Professional Saddler — Sheridan, WY"
           }
@@ -236,7 +236,7 @@
           "type": "button",
           "settings": {
             "button_label": "Our Story & Process",
-            "button_link": "shopify://pages/process",
+            "button_link": "shopify://collections/all",
             "button_style_secondary": false
           }
         }
@@ -406,13 +406,59 @@
       "settings": {
         "heading": "Shop by Cut",
         "subheading": "Select the cut you need — every hide ships same day from Texas.",
-        "collection": "featured-products",
         "products_to_show": 6,
         "columns_desktop": "3",
         "color_scheme": "scheme-1",
         "view_all_label": "View All Leathers",
         "padding_top": 56,
         "padding_bottom": 56
+      }
+    },
+    "tsf_faq": {
+      "type": "tsf-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the difference between 1st and 2nd grade leather?",
+            "answer": "1st grade hides are the cleanest cuts with minimal natural markings — ideal for tooled show saddles or presentation pieces. 2nd grade hides have more natural character (brands, scars) but the same structural strength, making them perfect for working saddles at a better value."
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What thickness should I use for saddle skirts?",
+            "answer": "For saddle skirts we recommend 13–14oz (Extra Heavy) or 14oz+ skirting leather. The extra weight gives your skirts the rigidity and longevity that working saddles demand. For lighter applications like saddlebags or tooled accessories, 9–10oz is a great choice."
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "We ship same day from Greenville, Texas for orders placed before 3PM Mon–Fri. Most US orders arrive in 1–3 business days. You'll receive a tracking number by email as soon as your order ships."
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I call to ask about a specific hide before ordering?",
+            "answer": "Absolutely. Manuel is available Mon–Fri 8AM–3PM CT at (972) 750-2810. He can walk you through the current inventory, help you pick the right grade and thickness, and answer any technical questions about the leather."
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if the leather isn't what I expected?",
+            "answer": "Contact us — we'll make it right. We stand behind every hide we ship. Reach Manuel at manuel@theskirtingfactoryllc.com or (972) 750-2810 and we'll work out a solution together."
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
+      "settings": {
+        "heading": "Frequently asked questions",
+        "show_contact_cta": true,
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   },
@@ -421,10 +467,10 @@
     "tsf_stat_bar",
     "featured_collection",
     "tsf_why_us",
-    "tsf_leather_filter",
+    "tsf_how_it_works",
+    "tsf_faq",
     "custom_testimonials",
     "image_with_text_6xjpYf",
-    "tsf_how_it_works",
-    "slideshow_7pGBjy"
+    "tsf_leather_filter"
   ]
 }
