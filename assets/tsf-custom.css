@@ -288,8 +288,8 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
 
   /* Set hero height on mobile — content area defines container height */
   .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
-    min-height: 72vw !important;
-    max-height: 520px !important;
+    min-height: 55vh !important;
+    max-height: 600px !important;
   }
 
   /* Image fills the container absolutely */
