@@ -99,11 +99,6 @@
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1">
-                      {{ product.title | escape }}
-                    </h2>
-                  </a>
                 </div>
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -722,6 +717,7 @@
       {{ product | structured_data }}
     </script>
   </div>
+  {% render 'tsf-sticky-atc', product: product %}
 </product-info>
 
 {% schema %}

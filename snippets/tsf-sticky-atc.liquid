@@ -1,0 +1,96 @@
+{% comment %}
+  tsf-sticky-atc.liquid
+  A bottom sticky bar for mobile that appears when the user scrolls past the main buy button.
+{% endcomment %}
+
+<div class="tsf-sticky-atc" id="tsfStickyATC">
+  <div class="tsf-sticky-atc__inner">
+    <div class="tsf-sticky-atc__info">
+      <span class="tsf-sticky-atc__title">{{ product.title | escape }}</span>
+      <span class="tsf-sticky-atc__price">{{ product.price | money }}</span>
+    </div>
+    <div class="tsf-sticky-atc__button">
+      <button type="button" class="button button--primary" onclick="var btn = document.querySelector('.product-form__submit'); if(btn) btn.click();">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .tsf-sticky-atc {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(var(--color-background));
+    border-top: 1px solid rgba(var(--color-foreground), 0.1);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+    z-index: 100;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 1rem 1.5rem;
+    display: none;
+  }
+  .tsf-sticky-atc.is-visible {
+    transform: translateY(0);
+  }
+  .tsf-sticky-atc__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: var(--page-width);
+    margin: 0 auto;
+  }
+  .tsf-sticky-atc__info {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    overflow: hidden;
+  }
+  .tsf-sticky-atc__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(var(--color-foreground));
+    margin-bottom: 0.2rem;
+  }
+  .tsf-sticky-atc__price {
+    font-size: 1.4rem;
+    color: rgba(var(--color-foreground), 0.75);
+    font-weight: 500;
+  }
+  .tsf-sticky-atc__button button {
+    min-height: 4.4rem;
+    padding: 0 2.4rem;
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .tsf-sticky-atc {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var mainSubmit = document.querySelector('.product-form__submit');
+    var stickyBlock = document.getElementById('tsfStickyATC');
+    if(!mainSubmit || !stickyBlock) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      if(entries[0].boundingClientRect.top < 0 && !entries[0].isIntersecting) {
+        stickyBlock.classList.add('is-visible');
+      } else {
+        stickyBlock.classList.remove('is-visible');
+      }
+    }, { threshold: 0, rootMargin: "-100px 0px 0px 0px" });
+
+    observer.observe(mainSubmit);
+  });
+</script>
