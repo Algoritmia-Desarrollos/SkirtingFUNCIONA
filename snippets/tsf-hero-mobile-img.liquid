@@ -1,0 +1,20 @@
+<script>
+  (function () {
+    var mq = window.matchMedia('(max-width: 749px)');
+    function swapHeroMobile(e) {
+      if (!e.matches) return;
+      var banner = document.querySelector('.banner .banner__media img, .banner__media .media img');
+      if (banner && !banner.dataset.mobileSwapped) {
+        banner.dataset.mobileSwapped = '1';
+        banner.src = {{ 'hero_mobile.jpeg' | asset_url | json }};
+        banner.srcset = '';
+        banner.style.objectPosition = 'center center';
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { swapHeroMobile(mq); });
+    } else {
+      swapHeroMobile(mq);
+    }
+  })();
+</script>

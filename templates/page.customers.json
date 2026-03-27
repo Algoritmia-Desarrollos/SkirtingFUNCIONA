@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "testimonials": {
+      "type": "custom-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "This leather tools like butter. Been using Hermann Oak for 15 years, switching to TSF permanently.",
+            "author": "Jake R.",
+            "role_location": "Saddle Maker, Montana"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Incredible flex and strength. My customers immediately noticed the difference on the newly crafted saddles.",
+            "author": "Marcus W.",
+            "role_location": "Leatherworker, Texas"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The fact that it ships same day from Texas is a gamechanger. I get my sides within 48 hours for a fraction of the price of W&C.",
+            "author": "David L.",
+            "role_location": "Craftsman, Wyoming"
+          }
+        },
+        "testimonial_4": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Premium Argentine veg-tan that simply behaves perfectly. Absolutely unmatched value.",
+            "author": "Sarah H.",
+            "role_location": "Artisan, Colorado"
+          }
+        },
+        "testimonial_5": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "If you make saddles, you owe it to yourself to try TSF. Excellent customer service and unmatched quality.",
+            "author": "Tom B.",
+            "role_location": "Master Saddler, Oklahoma"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3",
+        "testimonial_4",
+        "testimonial_5"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "testimonials"
+  ]
+}

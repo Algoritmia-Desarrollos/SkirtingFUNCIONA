@@ -1,0 +1,98 @@
+{%- style -%}
+  .tsf-stat-bar-section {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background: rgb(var(--color-background));
+  }
+  .tsf-stat-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  @media screen and (max-width: 749px) {
+    .tsf-stat-bar { grid-template-columns: repeat(2, 1fr); }
+  }
+  .tsf-stat-bar__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.2rem 1.5rem;
+    text-align: center;
+    gap: 0.4rem;
+    border-right: 1px solid rgba(var(--color-foreground), 0.08);
+    background: rgba(var(--color-foreground), 0.02);
+    transition: background 0.2s ease;
+  }
+  .tsf-stat-bar__item:last-child { border-right: none; }
+  @media screen and (max-width: 749px) {
+    .tsf-stat-bar__item:nth-child(2) { border-right: none; }
+    .tsf-stat-bar__item:nth-child(3),
+    .tsf-stat-bar__item:nth-child(4) { border-top: 1px solid rgba(var(--color-foreground), 0.08); }
+  }
+  .tsf-stat-bar__item:hover { background: rgba(var(--color-foreground), 0.05); }
+  .tsf-stat-bar__number {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04rem;
+    color: rgb(var(--color-foreground));
+  }
+  .tsf-stat-bar__label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.5);
+  }
+  @media screen and (max-width: 749px) {
+    .tsf-stat-bar__number { font-size: 2rem; }
+    .tsf-stat-bar__label { font-size: 0.95rem; }
+  }
+{%- endstyle -%}
+
+<div class="tsf-stat-bar-section">
+  <div class="page-width">
+    <div class="tsf-stat-bar">
+      <div class="tsf-stat-bar__item">
+        <span class="tsf-stat-bar__number">{{ section.settings.stat_1_number }}</span>
+        <span class="tsf-stat-bar__label">{{ section.settings.stat_1_label }}</span>
+      </div>
+      <div class="tsf-stat-bar__item">
+        <span class="tsf-stat-bar__number">{{ section.settings.stat_2_number }}</span>
+        <span class="tsf-stat-bar__label">{{ section.settings.stat_2_label }}</span>
+      </div>
+      <div class="tsf-stat-bar__item">
+        <span class="tsf-stat-bar__number">{{ section.settings.stat_3_number }}</span>
+        <span class="tsf-stat-bar__label">{{ section.settings.stat_3_label }}</span>
+      </div>
+      <div class="tsf-stat-bar__item">
+        <span class="tsf-stat-bar__number">{{ section.settings.stat_4_number }}</span>
+        <span class="tsf-stat-bar__label">{{ section.settings.stat_4_label }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Stats Bar",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "stat_1_number", "label": "Stat 1 Number", "default": "500+" },
+    { "type": "text", "id": "stat_1_label",  "label": "Stat 1 Label",  "default": "Orders shipped" },
+    { "type": "text", "id": "stat_2_number", "label": "Stat 2 Number", "default": "20+" },
+    { "type": "text", "id": "stat_2_label",  "label": "Stat 2 Label",  "default": "Years of tanning tradition" },
+    { "type": "text", "id": "stat_3_number", "label": "Stat 3 Number", "default": "Same day" },
+    { "type": "text", "id": "stat_3_label",  "label": "Stat 3 Label",  "default": "Shipping from TX" },
+    { "type": "text", "id": "stat_4_number", "label": "Stat 4 Number", "default": "100%" },
+    { "type": "text", "id": "stat_4_label",  "label": "Stat 4 Label",  "default": "Satisfaction guarantee" },
+    { "type": "range", "id": "padding_top",    "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Padding Top",    "default": 32 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Padding Bottom", "default": 32 }
+  ],
+  "presets": [{ "name": "Stats Bar" }]
+}
+{% endschema %}

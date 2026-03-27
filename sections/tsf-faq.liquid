@@ -1,0 +1,322 @@
+{%- style -%}
+  .tsf-faq {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .tsf-faq__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .tsf-faq__header .tsf-label {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.45);
+    margin-bottom: 1rem;
+  }
+
+  .tsf-faq__header h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .tsf-faq__list {
+    max-width: 78rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(var(--color-foreground), 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .tsf-faq__item {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+  }
+
+  .tsf-faq__item:last-child {
+    border-bottom: none;
+  }
+
+  .tsf-faq__question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 2rem 2.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: rgb(var(--color-foreground));
+    line-height: 1.35;
+    transition: background 0.2s ease;
+  }
+
+  .tsf-faq__question:hover {
+    background: rgba(var(--color-foreground), 0.03);
+  }
+
+  .tsf-faq__question[aria-expanded="true"] {
+    background: rgba(var(--color-foreground), 0.03);
+  }
+
+  .tsf-faq__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(var(--color-foreground), 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.2s ease;
+  }
+
+  .tsf-faq__question[aria-expanded="true"] .tsf-faq__icon {
+    transform: rotate(45deg);
+    background: rgba(var(--color-foreground), 0.15);
+  }
+
+  .tsf-faq__icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: rgb(var(--color-foreground));
+  }
+
+  .tsf-faq__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 2.4rem;
+  }
+
+  .tsf-faq__answer.is-open {
+    max-height: 400px;
+    padding: 0 2.4rem 2rem;
+  }
+
+  .tsf-faq__answer p {
+    font-size: 1.45rem;
+    line-height: 1.75;
+    color: rgba(var(--color-foreground), 0.75);
+    margin: 0;
+  }
+
+  .tsf-faq__cta {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.4rem;
+    color: rgba(var(--color-foreground), 0.65);
+  }
+
+  .tsf-faq__cta a {
+    color: rgb(var(--color-foreground));
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .tsf-faq__cta a:hover {
+    opacity: 0.75;
+  }
+
+  @media screen and (max-width: 749px) {
+    .tsf-faq__question {
+      font-size: 1.4rem;
+      padding: 1.8rem 1.8rem;
+    }
+    .tsf-faq__answer {
+      padding: 0 1.8rem;
+    }
+    .tsf-faq__answer.is-open {
+      padding: 0 1.8rem 1.8rem;
+    }
+    .tsf-faq__answer p {
+      font-size: 1.35rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="tsf-faq color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+
+    <div class="tsf-faq__header">
+      <span class="tsf-label">Have questions?</span>
+      <h2>{{ section.settings.heading | escape }}</h2>
+    </div>
+
+    <div class="tsf-faq__list" role="list">
+      {%- for block in section.blocks -%}
+        <div class="tsf-faq__item" role="listitem" {{ block.shopify_attributes }}>
+          <button
+            class="tsf-faq__question"
+            aria-expanded="false"
+            aria-controls="faq-answer-{{ section.id }}-{{ forloop.index }}"
+          >
+            <span>{{ block.settings.question | escape }}</span>
+            <span class="tsf-faq__icon" aria-hidden="true">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </span>
+          </button>
+          <div
+            class="tsf-faq__answer"
+            id="faq-answer-{{ section.id }}-{{ forloop.index }}"
+            role="region"
+          >
+            <p>{{ block.settings.answer }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_contact_cta -%}
+      <p class="tsf-faq__cta">
+        Still have questions? <a href="tel:+19727502810">Call Manuel at (972) 750-2810</a> or <a href="mailto:manuel@theskirtingfactoryllc.com">send an email</a>.
+      </p>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<script>
+  (function() {
+    var faqSection = document.currentScript.closest('.tsf-faq') || document.querySelector('.tsf-faq');
+    if (!faqSection) return;
+    faqSection.querySelectorAll('.tsf-faq__question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        var answerId = this.getAttribute('aria-controls');
+        var answer = document.getElementById(answerId);
+        if (!answer) return;
+        this.setAttribute('aria-expanded', String(!expanded));
+        if (expanded) {
+          answer.classList.remove('is-open');
+        } else {
+          answer.classList.add('is-open');
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently asked questions"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_cta",
+      "label": "Show contact link below",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is the difference between 1st and 2nd grade?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "1st grade hides are the cleanest cuts with minimal natural markings — ideal for tooled show saddles or presentation pieces. 2nd grade hides have more natural character (brands, scars) but the same structural quality, making them perfect for working saddles at a better price."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the difference between 1st and 2nd grade leather?",
+            "answer": "1st grade hides are the cleanest cuts with minimal natural markings — ideal for tooled show saddles or presentation pieces. 2nd grade hides have more natural character (brands, scars) but the same structural strength, making them perfect for working saddles at a better value."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What thickness should I use for saddle skirts?",
+            "answer": "For saddle skirts we recommend 13–14oz (Extra Heavy) or 14oz+ skirting leather. The extra weight gives your skirts the rigidity and longevity that working saddles demand. For lighter applications like saddlebags or tooled accessories, 9–10oz is a great choice."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "We ship same day from Greenville, Texas for orders placed before 3PM Mon–Fri. Most US orders arrive in 1–3 business days. You'll receive a tracking number by email as soon as your order ships."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I call to ask about a specific hide before ordering?",
+            "answer": "Absolutely. Manuel is available Mon–Fri 8AM–3PM CT at (972) 750-2810. He can walk you through the current inventory, help you pick the right grade and thickness, and answer any technical questions about the leather."
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if the leather isn't what I expected?",
+            "answer": "Contact us — we'll make it right. We stand behind every hide we ship. Reach Manuel at manuel@theskirtingfactoryllc.com or (972) 750-2810 and we'll work out a solution together."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

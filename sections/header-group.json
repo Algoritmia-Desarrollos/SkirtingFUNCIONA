@@ -1,0 +1,62 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement_bar_V8HL99": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_1": {
+          "type": "announcement",
+          "settings": {
+            "text": "⚡ Ships same day from Texas — Order by 3PM Mon–Fri",
+            "link": "shopify://collections"
+          }
+        },
+        "announcement_3": {
+          "type": "announcement",
+          "settings": {
+            "text": "📞 Questions? Call Manuel: (972) 750-2810 — Mon–Fri 8AM–3PM CT",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_1",
+        "announcement_3"
+      ],
+      "name": "t:sections.announcement-bar.presets.name",
+      "settings": {
+        "auto_rotate": true,
+        "change_slides_speed": 4,
+        "color_scheme": "scheme-3",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "reduce-logo-size",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": false,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 4,
+        "padding_bottom": 4
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_V8HL99",
+    "header"
+  ]
+}

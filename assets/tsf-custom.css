@@ -1,0 +1,809 @@
+/* ======================================================
+   The Skirting Factory – Custom Visual Enhancements
+   ====================================================== */
+
+/* -----------------------------------------------
+   1. PRODUCT CARDS — premium image hover & shadow
+   ----------------------------------------------- */
+
+.product-card-wrapper {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.card--card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card-wrapper:hover .card--card {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+}
+
+.card__heading {
+  font-weight: 700;
+  letter-spacing: 0.01rem;
+}
+
+.card-information .price {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Subtle separator between product name and price */
+.card-information > * + * {
+  margin-top: 0.4rem;
+}
+
+
+/* -----------------------------------------------
+   2. PRODUCT PAGE — refined layout
+   ----------------------------------------------- */
+
+/* Subtle section divider between blocks */
+.product__info-container .product-form {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(var(--color-foreground), 0.08);
+}
+
+/* Description text — improved line-height for readability */
+.product__description {
+  line-height: 1.75;
+}
+
+.product__description ul,
+.product__description ol {
+  padding-left: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.product__description ul li,
+.product__description ol li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+/* Hero image — slight rounding */
+.product__media-wrapper .media {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------------
+   3. ADD TO CART BUTTON — premium look
+   ----------------------------------------------- */
+
+.product-form__submit.button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  padding: 1.6rem 2.4rem;
+  border-radius: 8px;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+  width: 100%;
+  max-width: 44rem;
+}
+
+.product-form__submit.button:hover:not([aria-disabled='true']) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--color-button), 0.35);
+}
+
+.product-form__submit.button:active {
+  transform: translateY(0);
+}
+
+
+/* -----------------------------------------------
+   4. TRUST BADGES — premium style override
+   ----------------------------------------------- */
+
+.tsf-trust-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1.8rem 0 2rem;
+  padding: 1.6rem 1.8rem;
+  border-radius: 10px;
+  background: rgba(var(--color-foreground), 0.03);
+  border: 1px solid rgba(var(--color-foreground), 0.08);
+}
+
+.tsf-trust-badges .tsf-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.tsf-trust-badges .tsf-badge-row svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #5a8a5f;
+  stroke: #5a8a5f;
+}
+
+.tsf-trust-badges .tsf-badge-row strong {
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+}
+
+.tsf-trust-badges .tsf-badge-row span.tsf-badge-sub {
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+
+/* -----------------------------------------------
+   5. VARIANT PICKER — cleaner pill buttons
+   ----------------------------------------------- */
+
+.product-form__input .swatch-input__input:not(:checked) + .swatch__input-label,
+.product-form__input .select__select,
+fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .swatch__input-label {
+  border-radius: 8px;
+}
+
+/* Radio/pill variant buttons */
+.variant-input-wrapper .variant__button-label {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+
+/* -----------------------------------------------
+   6. ANNOUNCEMENT BAR — subtle refinement
+   ----------------------------------------------- */
+
+.announcement-bar__message {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.06rem;
+}
+
+
+/* -----------------------------------------------
+   7. TESTIMONIAL SECTION — card polish
+   ----------------------------------------------- */
+
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Star icon fill */
+.testimonial-card .svg-wrapper svg,
+.testimonial-card svg {
+  fill: #FAAF00;
+  color: #FAAF00;
+  stroke: none;
+}
+
+/* New premium testimonials stars */
+.tsf-testimonials__stars-summary svg,
+.tsf-testimonial-card__stars svg {
+  fill: #FAAF00 !important;
+  stroke: none !important;
+}
+
+
+/* -----------------------------------------------
+   12. TRUST BADGES — 4-row layout fix
+   ----------------------------------------------- */
+
+.tsf-trust-badges {
+  max-width: 44rem;
+}
+
+@media screen and (max-width: 749px) {
+  .tsf-trust-badges {
+    max-width: 100%;
+  }
+}
+
+
+/* -----------------------------------------------
+   13. FAQ SECTION — card polish
+   ----------------------------------------------- */
+
+.tsf-faq__list {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+}
+
+.tsf-faq__question {
+  font-family: inherit;
+}
+
+
+/* -----------------------------------------------
+   14. NEWSLETTER SECTION — visual polish
+   ----------------------------------------------- */
+
+.email-signup-banner__heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem) !important;
+  font-weight: 800;
+}
+
+
+/* -----------------------------------------------
+   15. RELATED PRODUCTS — top border
+   ----------------------------------------------- */
+
+.section-related-products {
+  border-top: 1px solid rgba(var(--color-foreground), 0.07);
+}
+
+
+/* -----------------------------------------------
+   8. IMAGE BANNER HERO — text readability + mobile height
+   ----------------------------------------------- */
+
+.image-banner .banner__box h2.hxxl,
+.image-banner .banner__box h2,
+.banner__heading {
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+
+.banner__text {
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+}
+
+/* Mobile hero — reduce height */
+@media screen and (max-width: 749px) {
+  .banner__media.banner__media--adapt,
+  .banner.banner--large .banner__media,
+  .banner__media {
+    height: 62vw !important;
+    min-height: 280px !important;
+    max-height: 420px !important;
+  }
+}
+
+
+/* -----------------------------------------------
+   9. SECTION RICH TEXT — visual breathing room
+   ----------------------------------------------- */
+
+.rich-text__heading {
+  line-height: 1.3;
+}
+
+
+/* -----------------------------------------------
+   10. FOOTER & PAGE — global polish
+   ----------------------------------------------- */
+
+/* Slightly rounder buttons globally */
+.button {
+  border-radius: 8px;
+}
+
+/* Smoother focus ring */
+*:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Collection/product grid spacing enhancement */
+.grid.product-grid {
+  row-gap: 3rem;
+}
+
+@media screen and (max-width: 749px) {
+  .grid.product-grid {
+    row-gap: 2rem;
+  }
+}
+
+/* -----------------------------------------------
+   11. RESPONSIVE TYPOGRAPHY FIXES
+   Applied on mobile (<750px) to prevent oversized text
+   ----------------------------------------------- */
+
+/* Hero banner heading — cap on mobile */
+@media screen and (max-width: 749px) {
+  /* The hxxl class from Shopify's theme scales with clamp — override it on mobile */
+  .banner__heading.hxxl,
+  .image-banner .hxxl,
+  .hxxl {
+    font-size: clamp(2.6rem, 8vw, 4rem) !important;
+    line-height: 1.15;
+  }
+
+  /* Announcement / banner text below hero */
+  .banner__text {
+    font-size: 1.5rem;
+    letter-spacing: 0.02rem;
+  }
+
+  /* Section headings inside Why Us and How It Works */
+  .tsf-why-us__section-title h2 {
+    font-size: 2rem;
+  }
+
+  .tsf-how-it-works__title h2 {
+    font-size: 1.9rem;
+  }
+
+  /* Stat numbers */
+  .tsf-why-us__stat-number {
+    font-size: 2rem !important;
+  }
+
+  .tsf-why-us__stat-label {
+    font-size: 1rem;
+  }
+
+  /* Step numbers — reduce circle and number */
+  .tsf-how-it-works__number {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.6rem !important;
+  }
+
+  /* Step text */
+  .tsf-how-it-works__step-title {
+    font-size: 1.4rem !important;
+  }
+
+  .tsf-how-it-works__step-text {
+    font-size: 1.3rem !important;
+  }
+
+  /* Why Us card title */
+  .tsf-why-us__card-title {
+    font-size: 1.45rem !important;
+  }
+
+  .tsf-why-us__card-text {
+    font-size: 1.3rem !important;
+  }
+
+  /* Rich text section headings */
+  .rich-text__heading {
+    font-size: 1.8rem;
+  }
+}
+
+/* Stat bar — slightly smaller on mid-size tablets */
+@media screen and (max-width: 989px) and (min-width: 750px) {
+  .tsf-why-us__stat-number {
+    font-size: 2.2rem;
+  }
+}
+
+
+/* -----------------------------------------------
+   16. IMAGE WITH TEXT — "Where Craft Meets Character"
+   Premium visual treatment
+   ----------------------------------------------- */
+
+/* Container gets a subtle background tint */
+.image-with-text {
+  background: rgba(var(--color-foreground), 0.015);
+}
+
+/* Image side — rounded corners, overflow clip, zoom on hover */
+.image-with-text__media-item {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.14);
+  position: relative;
+}
+
+/* Zoom effect on the photo */
+.image-with-text__media-item img,
+.image-with-text__media-item .media img {
+  transition: transform 0.6s ease !important;
+  transform-origin: center center;
+}
+
+.image-with-text__media-item:hover img,
+.image-with-text__media-item:hover .media img {
+  transform: scale(1.04) !important;
+}
+
+/* Gradient overlay on image for depth */
+.image-with-text__media-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.08) 0%,
+    transparent 60%
+  );
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Text side — better spacing and visual hierarchy */
+.image-with-text__content {
+  padding: 3rem 2rem 3rem 4rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  .image-with-text__content {
+    padding: 2.4rem 0 !important;
+  }
+
+  /* No badge on mobile */
+}
+
+/* Heading — left accent line */
+.image-with-text__content .image-with-text__heading {
+  font-size: clamp(2rem, 3.5vw, 2.8rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  position: relative;
+  padding-left: 1.6rem;
+  border-left: 4px solid rgb(var(--color-foreground));
+  margin-bottom: 2rem !important;
+}
+
+/* Body text — more readable, styled */
+.image-with-text__content .image-with-text__text p {
+  font-size: 1.5rem;
+  line-height: 1.75;
+  color: rgba(var(--color-foreground), 0.72);
+  margin-bottom: 1.2rem;
+}
+
+.image-with-text__content .image-with-text__text em {
+  font-style: normal;
+  font-weight: 700;
+  color: rgb(var(--color-foreground));
+}
+
+/* CTA button */
+.image-with-text__content .button {
+  margin-top: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+}
+
+
+/* -----------------------------------------------
+   17. SLIDESHOW — Premium full-bleed treatment
+   ----------------------------------------------- */
+
+/* Section: no padding so it bleeds fully */
+.shopify-section:has(slideshow-component) {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove page-width constraint from slideshow */
+slideshow-component {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: block;
+}
+
+/* Consistent slide height — cinematic 16:9 ish */
+.slideshow.banner--large .banner__media,
+.slideshow .slideshow__media.banner__media {
+  height: 68vh !important;
+  min-height: 420px !important;
+  max-height: 780px !important;
+  overflow: hidden;
+}
+
+/* All images cover + centered */
+.slideshow .banner__media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Bottom gradient vignette on every slide */
+.slideshow .banner__media::after {
+  content: '' !important;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 45%,
+    rgba(0, 0, 0, 0.38) 100%
+  ) !important;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Slideshow-component: positioning context for dots overlay */
+slideshow-component {
+  position: relative !important;
+  display: block;
+}
+
+/* Controls: overlay on top of images, at the bottom */
+slideshow-component .slideshow__controls {
+  position: absolute !important;
+  bottom: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 20 !important;
+  width: auto !important;
+  top: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide prev/next arrows — keep only dots + pause */
+slideshow-component .slider-button--prev,
+slideshow-component .slider-button--next {
+  display: none !important;
+}
+
+/* Controls backdrop — pill container for visibility */
+slideshow-component .slideshow__controls {
+  background: rgba(0,0,0,0.32) !important;
+  backdrop-filter: blur(6px) !important;
+  border-radius: 999px !important;
+  padding: 0.65rem 1.2rem !important;
+}
+
+/* Navigation dots — sleek line style */
+slideshow-component .slider-counter--dots .slider-counter__link--dots .dot {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.45);
+  display: block;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+slideshow-component .slider-counter--dots .slider-counter__link--dots.slider-counter__link--active .dot {
+  background: rgba(255,255,255,1);
+  width: 40px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
+/* Autoplay pause — bottom-right, overlaid */
+slideshow-component .slideshow__autoplay {
+  position: absolute !important;
+  bottom: 1.8rem !important;
+  right: 2rem !important;
+  left: auto !important;
+  transform: none !important;
+  z-index: 20;
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+}
+
+slideshow-component .slideshow__autoplay:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+slideshow-component .slideshow__autoplay svg {
+  width: 12px;
+  height: 12px;
+  fill: rgba(255,255,255,0.9);
+  stroke: none;
+}
+
+/* Remove any gap below the slideshow images */
+slideshow-component .slideshow {
+  margin-bottom: 0 !important;
+}
+
+
+/* -----------------------------------------------
+   18. PRODUCT PAGE — premium layout overhaul
+   ----------------------------------------------- */
+
+/* Product title — bold, large, tight leading */
+.product__title {
+  font-size: clamp(2rem, 2.8vw, 2.8rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01rem;
+  margin-bottom: 0.8rem;
+}
+
+/* USP pill strip — 3 compact badges under title */
+.tsf-product-usp-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0.4rem 0 1.6rem;
+}
+
+.tsf-product-usp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(var(--color-foreground), 0.7);
+  background: rgba(var(--color-foreground), 0.05);
+  border: 1px solid rgba(var(--color-foreground), 0.1);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  letter-spacing: 0.01rem;
+}
+
+/* Price block — bigger, more impactful */
+.product .price .price-item--regular,
+.product .price .price-item--sale {
+  font-size: 2.6rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02rem;
+}
+
+.product .price--on-sale .price-item--regular {
+  font-size: 1.6rem !important;
+  font-weight: 400 !important;
+  opacity: 0.5;
+}
+
+/* Variant picker legend — show selected value inline */
+.product-form__input legend {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: rgb(var(--color-foreground));
+}
+
+/* Gallery: main image - consistent cover fit */
+.product__media .media {
+  border-radius: 12px !important;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.03);
+}
+
+/* Thumbnails strip */
+.thumbnail-list {
+  gap: 0.7rem !important;
+  margin-top: 0.8rem !important;
+}
+
+.thumbnail-list__item {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbnail-list__item .thumbnail {
+  border-radius: 8px !important;
+  border: 2px solid transparent !important;
+  transition: border-color 0.2s ease, opacity 0.2s ease !important;
+  opacity: 0.65;
+}
+
+.thumbnail-list__item .thumbnail[aria-current="true"],
+.thumbnail-list__item .thumbnail:hover {
+  border-color: rgb(var(--color-foreground)) !important;
+  opacity: 1;
+}
+
+/* Product info section — tighter top spacing */
+.product__info-container {
+  padding-top: 0 !important;
+}
+
+/* Quantity selector — compact */
+.product-form .quantity {
+  max-width: 13rem;
+}
+
+/* Description — more space from ATC */
+.product__description {
+  margin-top: 2.4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(var(--color-foreground), 0.08);
+}
+
+@media screen and (max-width: 749px) {
+  .product__title {
+    font-size: 2rem !important;
+  }
+
+  .product .price .price-item--regular,
+  .product .price .price-item--sale {
+    font-size: 2.2rem !important;
+  }
+
+  .tsf-product-usp-pill {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .slideshow.banner--large .banner__media,
+  .slideshow .slideshow__media.banner__media {
+    height: 56vw !important;
+    min-height: 260px !important;
+    max-height: 420px !important;
+  }
+
+  slideshow-component .slideshow__controls {
+    bottom: 1.2rem !important;
+  }
+
+  slideshow-component .slideshow__autoplay {
+    bottom: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+
+/* -----------------------------------------------
+   19. MOBILE HEADER — even more compact
+   ----------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+  .header-wrapper {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+  }
+
+  /* Reduce logo size on mobile */
+  .header__heading-logo {
+    max-height: 2.4rem !important;
+  }
+
+  /* Tighten icon spacing */
+  .header__icons {
+    gap: 0.4rem !important;
+  }
+
+  /* Reduce cart/account icon size */
+  .header__icon svg {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}
+
+
+/* -----------------------------------------------
+   20. PRODUCT PAGE — description collapsible style
+   ----------------------------------------------- */
+
+/* Make description visually distinct block */
+.product__description {
+  font-size: 1.45rem;
+  border-left: 3px solid rgba(var(--color-foreground), 0.12);
+  padding-left: 1.6rem;
+  margin-top: 2.4rem;
+  padding-top: 0;
+}
+
+/* Clean up excess space after share button */
+.product__share-button {
+  margin-top: 2rem;
+  opacity: 0.6;
+}
+
+/* Subscription / deferred purchase notice — reduce visual weight */
+.deferred-purchase-option,
+.installment-payment-callout,
+shopify-payment-terms {
+  font-size: 1.2rem !important;
+  opacity: 0.65;
+  margin-top: -0.5rem !important;
+}
