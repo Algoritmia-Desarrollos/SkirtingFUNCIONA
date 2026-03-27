@@ -538,9 +538,9 @@ slideshow-component:not(.announcement-bar) {
 
 @media screen and (max-width: 749px) {
   slideshow-component:not(.announcement-bar) {
-    height: 56vh !important;
-    min-height: 320px !important;
-    max-height: 600px !important;
+    height: 65vw !important;
+    min-height: 280px !important;
+    max-height: 500px !important;
   }
 }
 
@@ -815,13 +815,6 @@ slideshow-component:not(.announcement-bar) .slideshow__controls:not(.tsf-dots-ov
 
 /* Mobile */
 @media screen and (max-width: 749px) {
-  .slideshow.banner--large .banner__media,
-  .slideshow .slideshow__media.banner__media {
-    height: 56vw !important;
-    min-height: 260px !important;
-    max-height: 420px !important;
-  }
-
   .slideshow .slideshow__controls,
   slideshow-component .slideshow__controls {
     bottom: 1.2rem !important;
