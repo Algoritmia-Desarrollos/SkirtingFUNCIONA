@@ -262,118 +262,6 @@
         "padding_bottom": 56
       }
     },
-    "slideshow_7pGBjy": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_g7fq3e": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/curtiembre-03-grande-1620x1080_-_crop_2025-06-09_03-09-19_f711a1a1-8c41-4730-9f34-2e1d0c0f67d5.jpg",
-            "image_overlay_opacity": 10,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
-          }
-        },
-        "slide_WcrT78": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/3.png",
-            "image_overlay_opacity": 20,
-            "heading": "",
-            "heading_size": "h0",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
-        "slide_TYdbHx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/catre_cueros_2.jpg",
-            "image_overlay_opacity": 20,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
-          }
-        },
-        "slide_qWCLMm": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/slide3.png",
-            "image_overlay_opacity": 0,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
-          }
-        },
-        "slide_aLwJJy": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-06-11_at_12.20.36_PM_-_crop_2025-06-18_20-14-17.jpg",
-            "image_overlay_opacity": 20,
-            "heading": "",
-            "heading_size": "hxl",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_g7fq3e",
-        "slide_WcrT78",
-        "slide_TYdbHx",
-        "slide_qWCLMm",
-        "slide_aLwJJy"
-      ],
-      "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "image_behavior": "ambient",
-        "show_text_below": false,
-        "accessibility_info": "Photos from the Curtidos Reconquista tannery in Argentina"
-      }
-    },
     "tsf_leather_filter": {
       "type": "tsf-leather-filter",
       "blocks": {
@@ -404,6 +292,7 @@
       },
       "block_order": ["filter_sides", "filter_skirting", "filter_dbutts", "filter_sbutts", "filter_shoulders", "filter_finished"],
       "settings": {
+        "collection": "all",
         "heading": "Shop by Cut",
         "subheading": "Select the cut you need — every hide ships same day from Texas.",
         "products_to_show": 6,
@@ -456,7 +345,7 @@
       "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
       "settings": {
         "heading": "Frequently asked questions",
-        "show_contact_cta": true,
+        "show_contact_cta": false,
         "padding_top": 52,
         "padding_bottom": 52
       }

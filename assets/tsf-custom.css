@@ -1156,40 +1156,6 @@ h1, h2, h3, h4, h5, .title {
   box-shadow: 0 8px 18px rgba(0,0,0,0.12) !important;
 }
 
-/* 4. WhatsApp Floating Button */
-.tsf-whatsapp-float {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: #25d366;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(37,211,102,0.4);
-  z-index: 9999;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.tsf-whatsapp-float:hover {
-  transform: scale(1.08); /* slight bubble */
-  box-shadow: 0 6px 18px rgba(37,211,102,0.5);
-}
-@media screen and (max-width: 749px) {
-  .tsf-whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-    width: 54px;
-    height: 54px;
-  }
-  .tsf-whatsapp-float svg {
-    width: 30px;
-    height: 30px;
-  }
-}
-
 /* ====================================================
    UI Bug Fixes & Refinements
    ==================================================== */
@@ -1228,12 +1194,16 @@ body.overflow-hidden {
 }
 
 /* 4. Force Sticky Header globally */
-sticky-header, .shopify-section-header {
+.shopify-section-group-header-group {
   position: sticky !important;
   top: 0 !important;
-  z-index: 100 !important;
-  background-color: rgb(var(--color-background)) !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Optional: add slight shadow when scrolling */
+  z-index: 1000 !important;
+  background-color: rgb(var(--color-background));
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+sticky-header {
+  display: block;
 }
 
 /* ====================================================

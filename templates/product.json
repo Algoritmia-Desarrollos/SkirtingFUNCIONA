@@ -45,6 +45,12 @@
             "show_dynamic_checkout": true,
             "show_gift_card_recipient": false
           }
+        },
+        "trust_strip_sidebar": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style='border-top:1px solid rgba(var(--color-foreground),0.08);margin-top:1.6rem;padding-top:1.6rem;display:flex;flex-direction:column;gap:0.9rem;'><div style='display:flex;align-items:flex-start;gap:0.8rem;font-size:1.25rem;color:rgba(var(--color-foreground),0.75);line-height:1.4;'><span style='font-size:1.4rem;flex-shrink:0;'>🚚</span><span><strong style='color:rgb(var(--color-foreground));'>Ships same day from Texas</strong> — Order by 3PM Mon–Fri</span></div><div style='display:flex;align-items:flex-start;gap:0.8rem;font-size:1.25rem;color:rgba(var(--color-foreground),0.75);line-height:1.4;'><span style='font-size:1.4rem;flex-shrink:0;'>✅</span><span><strong style='color:rgb(var(--color-foreground));'>Satisfaction guaranteed</strong> — We stand behind every hide</span></div><div style='display:flex;align-items:flex-start;gap:0.8rem;font-size:1.25rem;color:rgba(var(--color-foreground),0.75);line-height:1.4;'><span style='font-size:1.4rem;flex-shrink:0;'>🔒</span><span><strong style='color:rgb(var(--color-foreground));'>Secure checkout</strong> — 256-bit SSL encryption</span></div><div style='display:flex;align-items:flex-start;gap:0.8rem;font-size:1.25rem;color:rgba(var(--color-foreground),0.75);line-height:1.4;'><span style='font-size:1.4rem;flex-shrink:0;'>📞</span><span><strong style='color:rgb(var(--color-foreground));'>Questions? Call Manuel</strong> — <a href='tel:+19727502810' style='color:rgb(var(--color-foreground));text-decoration:underline;'>(972) 750-2810</a> · Mon–Fri 8AM–3PM CT</span></div></div>"
+          }
         }
       },
       "block_order": [
@@ -55,7 +61,8 @@
         "inventory",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "trust_strip_sidebar"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -91,7 +98,7 @@
       }
     },
     "technical_specs": {
-      "type": "collapsible_content",
+      "type": "collapsible-content",
       "blocks": {
         "tab_about": {
           "type": "collapsible_row",
