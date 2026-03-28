@@ -251,7 +251,7 @@
     </div>
 
     <div class="tsf-leather-filter__footer">
-      <a href="/collections/all" class="tsf-filter-view-all" id="tsf-filter-viewall-{{ section.id }}">
+      <a href="{{ routes.all_products_collection_url }}" class="tsf-filter-view-all" id="tsf-filter-viewall-{{ section.id }}">
         {{ section.settings.view_all_label | escape }}
       </a>
     </div>
@@ -287,7 +287,7 @@
         card.classList.toggle('is-hidden', card.dataset.group !== group);
       });
       if (viewAll) {
-        viewAll.href = colUrls[group] || colUrls['__all'] || '/collections/all';
+        viewAll.href = colUrls[group] || colUrls['__all'] || '{{ routes.all_products_collection_url }}';
       }
     }
 

@@ -196,6 +196,44 @@
         "padding_bottom": 52
       }
     },
+    "custom_testimonials": {
+      "type": "custom-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "photo_asset": "testimonial_saddle.jpeg",
+            "quote": "Been making saddles 22 years. This leather tools as clean as anything out there — every cut holds crisp. Showed up in two days from Texas which honestly surprised me.",
+            "author": "Randy K.",
+            "role_location": "Saddle Maker — Weatherford, TX"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "photo_asset": "testimonial_tooling.jpeg",
+            "quote": "Ordered three times now and every hide has been exactly what was described. Manuel picked up the phone when I had a question about thickness — not something you get from most suppliers.",
+            "author": "Sarah M.",
+            "role_location": "Leather Artisan — Bozeman, MT"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "photo_asset": "testimonial_bags.jpeg",
+            "quote": "Got 4 sides for a ranch saddle build. All came graded just like the site said, no surprises. Ordered on a Tuesday mornin and they were here Thursday — can't ask for much more than that.",
+            "author": "Dave T.",
+            "role_location": "Professional Saddler — Sheridan, WY"
+          }
+        }
+      },
+      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
+      "settings": {
+        "heading": "What saddle makers say",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -204,7 +242,7 @@
         "products_to_show": 4,
         "columns_desktop": 4,
         "columns_mobile": "2",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -221,6 +259,7 @@
     "bulk_pricing_fullwidth",
     "technical_specs",
     "product_faq",
+    "custom_testimonials",
     "related-products"
   ]
 }
