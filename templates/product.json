@@ -84,17 +84,9 @@
     "bulk_pricing_fullwidth": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"page-width\"><div style=\"padding: 1.5rem 2rem; border: 1px dashed rgba(var(--color-foreground),0.2); font-size: 1.4rem; border-radius: 5px; background: rgba(var(--color-foreground),0.02); text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;\"><p style=\"margin:0;\"><strong>Buying 3+ sides?</strong> Call Manuel directly at (972) 750-2810 to discuss bulk volume pricing for your shop.</p></div></div>",
+        "custom_liquid": "<div class=\"page-width\"><div style=\"padding: 1.5rem 2rem; border: 1px dashed rgba(var(--color-foreground),0.2); font-size: 1.4rem; border-radius: 5px; background: rgba(var(--color-foreground),0.02); text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;\"><p style=\"margin:0;\"><strong>Buying 8+ sides?</strong> Call Manuel directly at (972) 750-2810 to discuss bulk volume pricing for your shop.</p></div></div>",
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "trust_badges_fullwidth": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"page-width\" style=\"text-align: center; padding: 2rem 0;\">{% render 'trust-badges' %}</div>",
-        "padding_top": 0,
-        "padding_bottom": 12
       }
     },
     "technical_specs": {
@@ -227,7 +219,6 @@
     "main",
     "product_description",
     "bulk_pricing_fullwidth",
-    "trust_badges_fullwidth",
     "technical_specs",
     "product_faq",
     "related-products"

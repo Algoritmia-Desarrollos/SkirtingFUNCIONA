@@ -382,6 +382,18 @@
     {%- if template.name == 'index' -%}
     {%- endif -%}
 
+    <script>
+      (function() {
+        function setHeaderHeight() {
+          var hg = document.querySelector('.shopify-section-group-header-group');
+          if (hg) {
+            document.documentElement.style.setProperty('--header-height', hg.offsetHeight + 'px');
+          }
+        }
+        setHeaderHeight();
+        window.addEventListener('resize', setHeaderHeight);
+      })();
+    </script>
 
   </body>
 </html>
