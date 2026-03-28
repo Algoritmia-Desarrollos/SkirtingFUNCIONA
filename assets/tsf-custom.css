@@ -1189,3 +1189,49 @@ h1, h2, h3, h4, h5, .title {
     height: 30px;
   }
 }
+
+/* ====================================================
+   UI Bug Fixes & Refinements
+   ==================================================== */
+
+/* 1. Prevent background scroll when mobile menu is open */
+body.overflow-hidden {
+  overflow: hidden !important;
+  touch-action: none !important;
+  position: relative !important;
+  height: 100vh !important;
+}
+
+/* 2. Scale up the cart icon */
+.header__icon--cart svg {
+  transform: scale(1.18);
+  transform-origin: center;
+}
+
+/* 3. Refine 'Quick Add' buttons */
+.quick-add__submit, .tsf-filter-card .button--secondary {
+  min-height: 4.2rem !important;
+  font-size: 1.25rem !important;
+  letter-spacing: 0.08rem !important;
+  padding: 0 1.5rem !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.quick-add {
+  margin: 1.2rem 0 !important;
+}
+.tsf-filter-card .button--secondary {
+  margin-top: 1.5rem !important;
+}
+
+/* 4. Force Sticky Header globally */
+sticky-header, .shopify-section-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  background-color: rgb(var(--color-background)) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Optional: add slight shadow when scrolling */
+}
