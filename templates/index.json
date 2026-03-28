@@ -7,13 +7,13 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>Premium Argentine Veg-Tan Leather</strong>",
-            "heading_size": "hxxl"
+            "heading_size": "h0"
           }
         },
         "text_Ci8aff": {
           "type": "text",
           "settings": {
-            "text": "Direct from the Tannery · Ships same day from Texas · Trusted by saddle makers across the US",
+            "text": "Tannery-direct quality. Ships same day from Texas.",
             "text_style": "subtitle"
           }
         },
@@ -46,50 +46,6 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
-      }
-    },
-    "tsf_why_us": {
-      "type": "tsf-why-us",
-      "blocks": {
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "icon": "truck",
-            "title": "Ships same day from Texas",
-            "text": "Order by 3PM Mon–Fri and your leather ships today from Greenville, TX. Most saddle makers receive it within 48 hours."
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "icon": "shield",
-            "title": "Satisfaction guaranteed",
-            "text": "If the leather isn't what you expected, contact us. We stand behind every hide we sell and will make it right."
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "icon": "leaf",
-            "title": "Eco-conscious tanning",
-            "text": "Pit-tanned with vegetable extracts using a process developed over 20 years. Better for the environment, better for your craft."
-          }
-        }
-      },
-      "block_order": ["card_1", "card_3", "card_4"],
-      "settings": {
-        "heading": "Why saddle makers choose TSF",
-        "subheading": "We're not just a leather supplier. We're the safest bet for your craft.",
-        "stat_1_number": "3000+",
-        "stat_1_label": "Orders shipped",
-        "stat_2_number": "20+",
-        "stat_2_label": "Years of tanning tradition",
-        "stat_3_number": "Same day",
-        "stat_3_label": "Shipping from TX",
-        "stat_4_number": "100%",
-        "stat_4_label": "Satisfaction guarantee",
-        "padding_top": 56,
-        "padding_bottom": 56
       }
     },
     "tsf_stat_bar": {
@@ -355,11 +311,10 @@
     "image_banner_L8hQtY",
     "tsf_stat_bar",
     "featured_collection",
-    "tsf_why_us",
-    "tsf_how_it_works",
     "custom_testimonials",
-    "image_with_text_6xjpYf",
+    "tsf_how_it_works",
     "tsf_leather_filter",
+    "image_with_text_6xjpYf",
     "tsf_faq"
   ]
 }

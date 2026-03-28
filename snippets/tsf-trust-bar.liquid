@@ -1,0 +1,97 @@
+<style>
+  .tsf-announce-bar {
+    background: #1a1a1a;
+    height: 36px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .tsf-announce-bar__track {
+    position: relative;
+    height: 36px;
+  }
+
+  .tsf-announce-bar__slide {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    padding: 0 1.5rem;
+  }
+
+  .tsf-announce-bar__slide.is-active {
+    opacity: 1;
+  }
+
+  .tsf-announce-bar__dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #c9a96e;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tsf-announce-bar__text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media screen and (max-width: 749px) {
+    .tsf-announce-bar { height: 34px; }
+    .tsf-announce-bar__track { height: 34px; }
+    .tsf-announce-bar__slide { height: 34px; }
+    .tsf-announce-bar__text { font-size: 1.05rem; }
+  }
+</style>
+
+<div class="tsf-announce-bar">
+  <div class="tsf-announce-bar__track" id="tsf-announce-track">
+    <div class="tsf-announce-bar__slide is-active">
+      <span class="tsf-announce-bar__dot"></span>
+      <span class="tsf-announce-bar__text">Ships same day from Texas — Order by 3PM Mon–Fri</span>
+      <span class="tsf-announce-bar__dot"></span>
+    </div>
+    <div class="tsf-announce-bar__slide">
+      <span class="tsf-announce-bar__dot"></span>
+      <span class="tsf-announce-bar__text">Satisfaction guaranteed — We stand behind every hide we sell</span>
+      <span class="tsf-announce-bar__dot"></span>
+    </div>
+    <div class="tsf-announce-bar__slide">
+      <span class="tsf-announce-bar__dot"></span>
+      <span class="tsf-announce-bar__text">Eco-conscious pit-tanning — 20+ years of tradition</span>
+      <span class="tsf-announce-bar__dot"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    function initAnnounceBar() {
+      var slides = document.querySelectorAll('.tsf-announce-bar__slide');
+      if (!slides.length) return;
+      var current = 0;
+      setInterval(function() {
+        slides[current].classList.remove('is-active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('is-active');
+      }, 3500);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAnnounceBar);
+    } else {
+      initAnnounceBar();
+    }
+  })();
+</script>

@@ -2,34 +2,37 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement_bar_V8HL99": {
+    "announcement_bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_1": {
+        "ann_1": {
           "type": "announcement",
           "settings": {
-            "text": "Order by 3PM CT today — ships same day from Texas 📦",
-            "link": "shopify://collections"
+            "text": "Ships same day from Texas",
+            "link": ""
           }
         },
-        "announcement_3": {
+        "ann_2": {
           "type": "announcement",
           "settings": {
-            "text": "📞 Questions? Call Manuel: (972) 750-2810 — Mon–Fri 8AM–3PM CT",
+            "text": "Satisfaction guaranteed",
+            "link": ""
+          }
+        },
+        "ann_3": {
+          "type": "announcement",
+          "settings": {
+            "text": "Eco-conscious tanning",
             "link": ""
           }
         }
       },
-      "block_order": [
-        "announcement_1",
-        "announcement_3"
-      ],
-      "name": "t:sections.announcement-bar.presets.name",
+      "block_order": ["ann_1", "ann_2", "ann_3"],
       "settings": {
         "auto_rotate": true,
-        "change_slides_speed": 4,
+        "change_slides_speed": 3,
         "color_scheme": "scheme-3",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
@@ -50,13 +53,13 @@
         "enable_language_selector": true,
         "enable_customer_avatar": true,
         "margin_bottom": 0,
-        "padding_top": 4,
-        "padding_bottom": 4
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
-    "announcement_bar_V8HL99",
+    "announcement_bar",
     "header"
   ]
 }

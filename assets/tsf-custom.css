@@ -158,6 +158,15 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
+/* -----------------------------------------------
+   Quick Add Modal — Give close button breathing room
+   ----------------------------------------------- */
+
+.quick-add-modal__content {
+  margin-top: 5rem !important;
+  max-height: calc(100% - 7rem) !important;
+}
+
 
 /* -----------------------------------------------
    6. ANNOUNCEMENT BAR — subtle refinement
@@ -165,12 +174,13 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
 
 /* Announcement bar — compact single line */
 .announcement-bar__message {
-  font-size: 1.1rem !important;
-  font-weight: 600;
-  letter-spacing: 0.04rem;
+  font-family: "Inter", sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06rem !important;
   margin: 0 !important;
   padding: 5px 0 !important;
-  line-height: 1.3 !important;
+  line-height: 1.4 !important;
   min-height: 0 !important;
 }
 
@@ -268,6 +278,16 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
   letter-spacing: 0.04rem;
 }
 
+/* Give the hero text box elegant bottom breathing room globally */
+.banner__box {
+  padding-bottom: 3rem !important;
+}
+
+/* Push the entire content block away from the bottom edge — works on both desktop and mobile */
+.image-banner .banner__content {
+  padding-bottom: 6vh !important;
+}
+
 /* Mobile hero — full bleed image with text overlay */
 @media screen and (max-width: 749px) {
   /* Fix zoom-in animation: position:fixed on img breaks mobile layout */
@@ -283,13 +303,14 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    padding: 2rem 1.5rem !important;
+    padding: 2rem 1.5rem 2rem !important;
   }
 
-  /* Set hero height on mobile — content area defines container height */
+  /* Set hero height on mobile — make it tall enough and anchor content to the bottom */
   .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
-    min-height: 55vh !important;
-    max-height: 600px !important;
+    min-height: 65vh !important;
+    max-height: 800px !important;
+    justify-content: flex-end !important;
   }
 
   /* Image fills the container absolutely */
@@ -319,6 +340,33 @@ fieldset.product-form__input legend + ul .swatch-input__input:not(:checked) + .s
 .button {
   border-radius: 8px;
 }
+
+/* -----------------------------------------------
+   19. DESKTOP HEADER & HERO POLISH
+   ----------------------------------------------- */
+
+@media screen and (min-width: 750px) {
+  /* Force hero H1 to single line with max width constraints */
+  .image-banner .banner__heading {
+    white-space: nowrap !important;
+    font-size: clamp(3rem, 4vw, 4.5rem) !important;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  /* Shrink desktop navbar height */
+  .shopify-section-group-header-group .header {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  
+  /* Strip excessive padding on the logo wrapper to flatten the bar */
+  .header__heading-link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
 
 /* Smoother focus ring */
 *:focus-visible {
@@ -1112,13 +1160,19 @@ html.overflow-hidden {
   overscroll-behavior: none !important;
 }
 
-/* 2. Force header group to remain persistently sticky on mobile */
-@media screen and (max-width: 989px) {
-  .shopify-section-group-header-group {
-    position: sticky !important;
-    top: 0;
-    z-index: 999;
-  }
+/* 2. Header group z-index */
+.shopify-section-group-header-group {
+  z-index: 1000 !important;
+}
+/* Navbar sticky — directo en CSS, sin depender de la clase de Dawn JS */
+.section-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
 /* ==========================================================================
@@ -1193,23 +1247,6 @@ body.overflow-hidden {
   margin-top: 1.5rem !important;
 }
 
-/* 4. Force Sticky Header globally — using fixed to bypass overflow constraints */
-.shopify-section-group-header-group {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 1000 !important;
-  background-color: rgb(var(--color-background));
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-
 sticky-header {
   display: block;
-}
-
-/* Compensate for fixed header height so content doesn't hide under it */
-body:not(.template-password) .shopify-section-group-main-group:first-of-type {
-  padding-top: var(--header-height, 0px);
 }

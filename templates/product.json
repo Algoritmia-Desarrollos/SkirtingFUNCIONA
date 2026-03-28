@@ -11,12 +11,6 @@
           "type": "rating",
           "settings": {}
         },
-        "tsf_usp_strip": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% render 'tsf-product-usp-strip' %}"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -56,7 +50,6 @@
       "block_order": [
         "title",
         "rating",
-        "tsf_usp_strip",
         "price",
         "inventory",
         "variant_picker",
