@@ -218,10 +218,10 @@
   },
   "order": [
     "main",
+    "product_description",
     "bulk_pricing_fullwidth",
     "trust_badges_fullwidth",
     "technical_specs",
-    "product_description",
     "product_faq",
     "related-products"
   ]
