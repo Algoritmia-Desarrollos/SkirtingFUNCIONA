@@ -73,14 +73,7 @@
         "padding_bottom": 12
       }
     },
-    "manuel_cta_fullwidth": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"page-width\" style=\"margin-top: 2rem;\"><div style=\"display:flex; justify-content:center; align-items:center; gap: 1.5rem; padding: 1.5rem; background: rgba(52, 199, 89, 0.08); border: 1px solid rgba(52, 199, 89, 0.3); border-radius: 8px; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;\"><div style=\"font-size: 2.8rem; line-height: 1;\">📞</div><div style=\"text-align:left;\"><p style=\"margin:0 0 0.5rem 0; font-weight:700; font-size: 1.3rem; color: #27ae60; text-transform: uppercase; letter-spacing: 0.1em;\">Questions? Ask Manuel</p><a href=\"tel:9727502810\" style=\"color: rgb(var(--color-foreground)); font-weight: 800; font-size: 1.9rem; text-decoration: none;\">(972) 750-2810</a></div></div></div>",
-        "padding_top": 12,
-        "padding_bottom": 0
-      }
-    },
+
     "bulk_pricing_fullwidth": {
       "type": "custom-liquid",
       "settings": {
@@ -225,7 +218,6 @@
   },
   "order": [
     "main",
-    "manuel_cta_fullwidth",
     "bulk_pricing_fullwidth",
     "trust_badges_fullwidth",
     "technical_specs",
