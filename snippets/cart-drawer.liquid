@@ -31,19 +31,10 @@
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
             <div class="cart-drawer__empty-content">
-              <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
-              <button
-                class="drawer__close"
-                type="button"
-                onclick="this.closest('cart-drawer').close()"
-                aria-label="{{ 'accessibility.close' | t }}"
-              >
-                <span class="svg-wrapper">
-                  {{- 'icon-close.svg' | inline_asset_content -}}
-                </span>
-              </button>
-              <a href="{{ routes.all_products_collection_url }}" class="button">
-                {{ 'general.continue_shopping' | t }}
+              <h2 class="cart__empty-text" style="font-weight:800;font-size:2rem;margin-bottom:0.5rem;">Your cart is empty</h2>
+              <p style="color:rgba(var(--color-foreground),0.7);margin-bottom:2rem;font-size:1.4rem;">Time to start your next project.</p>
+              <a href="/collections/all" class="button" style="width:100%;min-height:5rem;font-size:1.5rem;letter-spacing:0.1rem;text-transform:uppercase;font-weight:700;">
+                Shop Best Sellers
               </a>
 
               {%- if shop.customer_accounts_enabled and customer == null -%}
@@ -548,12 +539,25 @@
             class="cart__checkout-button button"
             name="checkout"
             form="CartDrawer-Form"
+            style="min-height:5.5rem;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:800;border-radius:6px;width:100%;"
             {% if cart == empty %}
               disabled
             {% endif %}
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
+        </div>
+
+        <!-- Trust Badges -->
+        <div style="display:flex;justify-content:center;align-items:center;gap:1.5rem;margin-top:1.5rem;color:rgba(var(--color-foreground),0.65);">
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:1.2rem;font-weight:500;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            Secure Checkout
+          </div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:1.2rem;font-weight:500;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Ships Same Day
+          </div>
         </div>
       </div>
     </div>

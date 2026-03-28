@@ -1235,3 +1235,30 @@ sticky-header, .shopify-section-header {
   background-color: rgb(var(--color-background)) !important;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Optional: add slight shadow when scrolling */
 }
+
+/* ====================================================
+   5. Premium Typography Resets 
+   ==================================================== */
+:root {
+  --font-heading-family: "Playfair Display", serif !important;
+  --font-heading-weight: 600 !important;
+  --font-body-family: "Inter", sans-serif !important;
+  --font-body-weight: 400 !important;
+  --font-body-weight-bold: 700 !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--font-heading-family) !important;
+  letter-spacing: -0.02em;
+}
+
+body, p, span, a, div, li, td, th {
+  font-family: var(--font-body-family);
+  letter-spacing: normal;
+}
+
+/* Force specific critical buttons to be sans-serif for legibility */
+.button, .shopify-payment-button__button, .quick-add__submit {
+  font-family: var(--font-body-family) !important;
+  font-weight: 700 !important;
+}
