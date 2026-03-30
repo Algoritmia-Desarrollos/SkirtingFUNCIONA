@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner_L8hQtY": {
@@ -97,7 +106,8 @@
         "testimonial_1": {
           "type": "testimonial",
           "settings": {
-            "photo_asset": "testimonial_saddle.jpeg",
+            "photo": "shopify://shop_images/Diseno_sin_titulo_-_2026-03-30T083652.016.webp",
+            "photo_asset": "",
             "quote": "Been making saddles 22 years. This leather tools as clean as anything out there — every cut holds crisp. Showed up in two days from Texas which honestly surprised me.",
             "author": "Randy K.",
             "role_location": "Saddle Maker — Weatherford, TX"
@@ -106,7 +116,8 @@
         "testimonial_2": {
           "type": "testimonial",
           "settings": {
-            "photo_asset": "testimonial_tooling.jpeg",
+            "photo": "shopify://shop_images/Diseno_sin_titulo_-_2026-03-30T083645.242.webp",
+            "photo_asset": "",
             "quote": "Ordered three times now and every hide has been exactly what was described. Manuel picked up the phone when I had a question about thickness — not something you get from most suppliers.",
             "author": "Sarah M.",
             "role_location": "Leather Artisan — Bozeman, MT"
@@ -115,14 +126,19 @@
         "testimonial_3": {
           "type": "testimonial",
           "settings": {
-            "photo_asset": "testimonial_bags.jpeg",
+            "photo": "shopify://shop_images/Diseno_sin_titulo_-_2026-03-30T083639.304.webp",
+            "photo_asset": "",
             "quote": "Got 4 sides for a ranch saddle build. All came graded just like the site said, no surprises. Ordered on a Tuesday mornin and they were here Thursday — can't ask for much more than that.",
             "author": "Dave T.",
             "role_location": "Professional Saddler — Sheridan, WY"
           }
         }
       },
-      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
       "settings": {
         "heading": "What saddle makers say",
         "padding_top": 56,
@@ -161,12 +177,83 @@
           }
         }
       },
-      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
       "settings": {
         "heading": "From browse to your bench in 3 days",
         "subheading": "Simple, fast, and reliable — every time.",
         "cta_label": "Shop All Leather",
         "cta_link": "shopify://collections",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "tsf_leather_filter": {
+      "type": "tsf-leather-filter",
+      "blocks": {
+        "filter_sides": {
+          "type": "filter_tab",
+          "settings": {
+            "label": "Sides",
+            "collection_handle": "sides"
+          }
+        },
+        "filter_skirting": {
+          "type": "filter_tab",
+          "settings": {
+            "label": "Skirting Sides",
+            "collection_handle": "skirting-sides"
+          }
+        },
+        "filter_dbutts": {
+          "type": "filter_tab",
+          "settings": {
+            "label": "Double Butts",
+            "collection_handle": "double-butts"
+          }
+        },
+        "filter_sbutts": {
+          "type": "filter_tab",
+          "settings": {
+            "label": "Single Butts",
+            "collection_handle": "single-butts"
+          }
+        },
+        "filter_shoulders": {
+          "type": "filter_tab",
+          "settings": {
+            "label": "Shoulders",
+            "collection_handle": "double-shoulders"
+          }
+        },
+        "filter_finished": {
+          "type": "filter_tab",
+          "settings": {
+            "label": "Finished",
+            "collection_handle": "finished-leather"
+          }
+        }
+      },
+      "block_order": [
+        "filter_sides",
+        "filter_skirting",
+        "filter_dbutts",
+        "filter_sbutts",
+        "filter_shoulders",
+        "filter_finished"
+      ],
+      "settings": {
+        "heading": "Shop by Cut",
+        "subheading": "Select the cut you need — every hide ships same day from Texas.",
+        "collection": "all",
+        "products_to_show": 6,
+        "columns_desktop": "3",
+        "color_scheme": "scheme-1",
+        "view_all_label": "View All Leathers",
         "padding_top": 56,
         "padding_bottom": 56
       }
@@ -218,47 +305,6 @@
         "padding_bottom": 56
       }
     },
-    "tsf_leather_filter": {
-      "type": "tsf-leather-filter",
-      "blocks": {
-        "filter_sides": {
-          "type": "filter_tab",
-          "settings": { "label": "Sides", "collection_handle": "sides" }
-        },
-        "filter_skirting": {
-          "type": "filter_tab",
-          "settings": { "label": "Skirting Sides", "collection_handle": "skirting-sides" }
-        },
-        "filter_dbutts": {
-          "type": "filter_tab",
-          "settings": { "label": "Double Butts", "collection_handle": "double-butts" }
-        },
-        "filter_sbutts": {
-          "type": "filter_tab",
-          "settings": { "label": "Single Butts", "collection_handle": "single-butts" }
-        },
-        "filter_shoulders": {
-          "type": "filter_tab",
-          "settings": { "label": "Shoulders", "collection_handle": "double-shoulders" }
-        },
-        "filter_finished": {
-          "type": "filter_tab",
-          "settings": { "label": "Finished", "collection_handle": "finished-leather" }
-        }
-      },
-      "block_order": ["filter_sides", "filter_skirting", "filter_dbutts", "filter_sbutts", "filter_shoulders", "filter_finished"],
-      "settings": {
-        "collection": "all",
-        "heading": "Shop by Cut",
-        "subheading": "Select the cut you need — every hide ships same day from Texas.",
-        "products_to_show": 6,
-        "columns_desktop": "3",
-        "color_scheme": "scheme-1",
-        "view_all_label": "View All Leathers",
-        "padding_top": 56,
-        "padding_bottom": 56
-      }
-    },
     "tsf_faq": {
       "type": "tsf-faq",
       "blocks": {
@@ -298,9 +344,16 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
       "settings": {
         "heading": "Frequently asked questions",
+        "color_scheme": "",
         "show_contact_cta": false,
         "padding_top": 52,
         "padding_bottom": 52
